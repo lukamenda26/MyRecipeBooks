@@ -61,7 +61,7 @@ class PhotosController extends Controller
         } else {
             $make->img_pass = "public/images/NoImage.png";
         }
-        if(!empty($request->img_pass)) {
+        if(!empty($request->img_title)) {
             $make->title = $request->title;
         } else {
             $make->title = "（不明）";
