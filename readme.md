@@ -1,4 +1,4 @@
-<p align="center">料理本おすすめサイト　Myレシピブック (My Recipe Book - your favorite recipe-books recomendation site)</p>
+# My Recipe Book - your favorite recipe-books recomendation site (料理本おすすめサイト　Myレシピブック)
 
 <!-- <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -9,7 +9,7 @@
 
 ## About this site
 
-It is for someone who wants to share him or her special experience around cooking by using some recipe-books. Also it was made of PHP/Laravel, and Laradock/Docker was used during its development.
+It is for someone who wants to share him or her special experience around cooking by using some recipe-books. You can post not only your favorite recipe-books' recommendations, but also cakes' or dishes' ones included in the books.
 
 ## Dependency
 
