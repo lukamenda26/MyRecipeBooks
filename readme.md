@@ -47,6 +47,7 @@ Make a new Laravel project
 /var/www/ # exit
 ```
 Modify an .env file in a Laradock directry as below:
+laradock/.env
 ```
 ###########################################################
 ###################### General Setup ######################
@@ -101,6 +102,7 @@ mysql> .\q
 root@{the "CONTAINER ID"}:/# exit
 ```
 Modify a my.cnf file in a Laradock/mysql directry as below:
+laradock/mysql/my.cnf
 ```
 [mysqld]
 sql-mode="STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
@@ -115,3 +117,6 @@ laradock $ docker-compose exec workspace bash
 
 ### Check the web-site through browsers
 Please check the URL/ http://localhost/home
+
+# Authors
+* **Ruka Menda**
