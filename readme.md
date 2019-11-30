@@ -1,4 +1,5 @@
-# My Recipe Book - your favorite recipe-books recomendation site (料理本おすすめサイト　Myレシピブック)
+# My Recipe Book
+your favorite recipe-books recomendation site
 
 <!-- <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -11,6 +12,9 @@
 
 It is for someone who wants to share him or her special experience around cooking by using some recipe-books. You can post not only your favorite recipe-books' recommendations, but also cakes' or dishes' ones included in the books.
 
+- Language: Japanese
+- Japanese title: 料理本おすすめサイト　Myレシピブック
+
 ## Dependency
 
 - Programming Language: PHP 7.3.8
@@ -19,32 +23,13 @@ It is for someone who wants to share him or her special experience around cookin
 - Web Server: Nginx
 - Development Environment: Docker (using Laradock https://github.com/Laradock/laradock.git)
 
-<!-- ## Laravel Sponsors
+## Installing into your local environment
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+Prereq: Git and Docker have been already installed.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
+Installing Laradock
+```
+$ mkdir laravel_docker
+$ cd laravel_docker
+$ git clone https://github.com/Laradock/laradock.git
+```
