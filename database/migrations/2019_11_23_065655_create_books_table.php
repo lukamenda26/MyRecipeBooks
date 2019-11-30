@@ -16,7 +16,7 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name','100');
-            $table->string('link','255');
+            $table->string('link','255')->nullable();
             $table->string('comment','255');
             $table->timestamps();
         });
