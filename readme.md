@@ -31,5 +31,15 @@ Installing Laradock
 ```
 $ mkdir laravel_docker
 $ cd laravel_docker
-$ git clone https://github.com/Laradock/laradock.git
+laravel_docker $ git clone https://github.com/Laradock/laradock.git
+```
+Inisialazing containers
+```
+laravel_docker $ cd laradock
+laradock $ cp env-emaple .env
+laradock $ docker-compose docker-compose up -d nginx mysql mailhog
+```
+Login Vertual environment
+```
+laravel_docker $ docker-compose exec workspace bash
 ```
