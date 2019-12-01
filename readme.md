@@ -34,7 +34,7 @@ laravel_docker $ git clone https://github.com/Laradock/laradock.git
 Inisialaze Docker containers
 ```
 laravel_docker $ cd laradock
-laradock $ cp env-emaple .env
+laradock $ cp env-example .env
 laradock $ docker-compose docker-compose up -d nginx mysql mailhog
 ```
 Login Vertual environment
