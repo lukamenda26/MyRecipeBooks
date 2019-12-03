@@ -11,8 +11,8 @@ class Book extends Model
     // // 任意のテーブルを紐付ける
     // protected $table = "users";
 
-    public function makes()
+    public function user()
     {
-        return $this->hasMany('App\Make');
+        return $this->belongsTo('App\User');
     }
 }
