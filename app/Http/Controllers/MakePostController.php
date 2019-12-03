@@ -7,7 +7,7 @@ use App\Make;
 use App\Http\Requests\MakePost;
 use App\Services\MakePostService;
 
-class PhotosController extends Controller
+class MakePostController extends Controller
 {
     protected $service;
 

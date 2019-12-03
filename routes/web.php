@@ -39,11 +39,11 @@ Route::get('/detail/{id}', 'BookDetailController@showDetail')->name('home.detail
 
 // 画像投稿
 // Route::resource('/photos', 'PhotosController', ['only' => ['create', 'store']]);
-Route::get('/detail/{id}/create', 'PhotosController@create')->name('detail.create');
-Route::post('/detail/{id}/create', 'PhotosController@store');
+Route::get('/detail/{id}/create', 'MakePostController@create')->name('detail.create');
+Route::post('/detail/{id}/create', 'MakePostController@store');
 
 //投稿確認ページ
-Route::get('/home/create/{make}', 'PhotosController@confirm')->name('detail.confirm');
+Route::get('/home/create/{make}', 'MakePostController@confirm')->name('detail.confirm');
 
 // 新規会員登録
 Route::get('/auth/register', 'Auth\RegisterController@showRegistrationForm');
