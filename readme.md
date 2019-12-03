@@ -25,26 +25,26 @@ It is for someone who wants to share him or her special experience around cookin
 - Docker
 
 ### How to Installing
-Install Laradock
+#### Install Laradock
 ```
 $ mkdir laravel_docker
 $ cd laravel_docker
 laravel_docker $ git clone https://github.com/Laradock/laradock.git
 ```
 
-Inisialaze Docker containers
+#### Inisialaze Docker containers
 ```
 laravel_docker $ cd laradock
 laradock $ cp env-example .env
 laradock $ docker-compose up -d nginx mysql mailhog
 ```
 
-Login Vertual environment as a user
+#### Login Vertual environment as a user
 ```
 laradock $ docker-compose exec --user=laradock workspace bash
 ```
 
-Make a new Laravel project
+#### Make a new Laravel project
 ```
 /var/www $ composer create-project laravel/laravel MyRecipeBooks --prefer-dist "5.5.*"
 /var/www $ cd MyRecipeBooks
@@ -56,7 +56,7 @@ Make a new Laravel project
 Note: the file ".env" will be invisible if you type "ls" command, but it seems existing because you can copy or edit it.
 I dont' know how to make it visible... sorry.
 
-Modify ".env" file in "/var/www" as bellow:
+#### Modify ".env" file in "/var/www" as bellow:
 /var/www/.env
 ```
 DB_CONNECTION=mysql
@@ -67,7 +67,7 @@ DB_USERNAME=default
 DB_PASSWORD=secret
 ```
 
-Install this project
+#### Install this project
 ```
 /var/www $ rm -rf MyRecipeBooks
 /var/www $ git clone https://github.com/lukamenda26/MyRecipeBooks
@@ -76,7 +76,7 @@ Install this project
 /var/www $ exit
 ```
 
-Modify ".env" file in a Laradock directry as below:
+#### Modify ".env" file in a Laradock directry as below:
 laradock/.env
 ```
 ###########################################################
@@ -97,24 +97,24 @@ APP_CODE_PATH_HOST=../MyRecipeBooks
 要らない (laravel_docker $ cd MyRecipeBooks)
 要らないlaravel_docker $ git clone https://github.com/lukamenda26/MyRecipeBooks -->
 
-Restart the containers
+#### Restart the containers
 ```
 laradock $ docker-compose stop
 laradock $ docker-compose up -d nginx mysql mailhog
 ```
 
-Check "CONTAINER ID" whose "NAMES" is "laradock_mysql_1" by the command as below:
+#### Check "CONTAINER ID" whose "NAMES" is "laradock_mysql_1" by the command as below:
 ```
 laradock $ docker ps
 ```
 
-Login MySQL (password: root)
+#### Login MySQL (password: root)
 ```
 laradock $ docker exec -it {the "CONTAINER ID"} /bin/bash
 root@{the "CONTAINER ID"}:/# mysql -u root -p
 ```
 
-Change User-authentication of MySQL
+#### Change User-authentication of MySQL
 ```
 mysql> SELECT user, host, plugin FROM mysql.user;
 +------------------+-----------+-----------------------+
@@ -134,7 +134,7 @@ mysql> .\q
 root@{the "CONTAINER ID"}:/# exit
 ```
 
-Modify "my.cnf" file in Laradock/mysql directry as below:
+#### Modify "my.cnf" file in Laradock/mysql directry as below:
 laradock/mysql/my.cnf
 ```
 [mysqld]
@@ -143,14 +143,14 @@ character-set-server=utf8
 default_authentication_plugin= mysql_native_password # <- new addition
 ```
 
-Install intervention/image
+#### Install intervention/image
 ```
 laradock $ docker-compose exec --user=laradock workspace bash
 /var/www $ composer require intervention/image
 /var/www $ exit
 ```
 
-Migrations (create a database and tables for this web-site)
+#### Migrations (create a database and tables for this web-site)
 ```
 laradock $ docker-compose exec workspace bash
 /var/www # php artisan migrate
