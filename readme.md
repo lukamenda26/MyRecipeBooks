@@ -37,13 +37,13 @@ laravel_docker $ cd laradock
 laradock $ cp env-example .env
 laradock $ docker-compose up -d nginx mysql mailhog
 ```
-Login Vertual environment
+Login Vertual environment as a user　＊この工程要らないのではないだろうか
 ```
-laradock $ docker-compose exec workspace bash
+laradock $ docker-compose exec --user=laradock workspace bash
 ```
-Make a new Laravel project
+Make a new Laravel project　＊この工程要らないのではないだろうか
 ```
-/var/www # composer create-project sampleapp --prefer-dist "5.5.*"
+/var/www # composer create-project laravel/laravel sampleapp --prefer-dist "5.5.*"
 /var/www/ # exit
 ```
 Modify an .env file in a Laradock directry as below:
@@ -71,7 +71,7 @@ Restart the containers
 ```
 sampleapp $ cd ../laradock
 laradock $ docker-compose stop
-laradock $ docker-compose docker-compose up -d nginx mysql mailhog
+laradock $ docker-compose up -d nginx mysql mailhog
 ```
 Check "CONTAINER ID" whose "NAMES" is "laradock_mysql_1" by the command as below:
 ```
