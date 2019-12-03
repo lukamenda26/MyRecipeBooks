@@ -35,7 +35,7 @@ Inisialaze Docker containers
 ```
 laravel_docker $ cd laradock
 laradock $ cp env-example .env
-laradock $ docker-compose docker-compose up -d nginx mysql mailhog
+laradock $ docker-compose up -d nginx mysql mailhog
 ```
 Login Vertual environment
 ```
