@@ -19,19 +19,9 @@ class BookReadController extends Controller
     {
         $this->service = $service;
     }
+    
     public function read()
     {
-        // $books = DB::table('books')
-        // ->join('users','users.id','=','books.user_id')
-        // ->select(
-        //     'books.id as book_id',
-        //     'books.name as book_name',
-        //     'comment',
-        //     'link',
-        //     'books.created_at as time',
-        //     'users.name as user_name'
-        //     )
-        // ->get();
         $result = $this->service->retrieveBookRead();
         return view('home', [
             'books' => $result,
