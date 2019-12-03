@@ -2,55 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Book;
-use App\User;
-use App\Make;
-use Illuminate\Support\Facades\DB;
+use App\Services\BookDetailService;
 
 class BookDetailController extends Controller
 {
-    /**
-     * @return void
-     */
+    protected $service;
 
-    public function showDetail($id)
+    public function __construct(BookDetailService $service)
     {
-        // try {
-        //     $x = Make::findOrFail($id);
-            // 記事詳細一覧
-        // $data = Book::find($id);
-        $x = Make::where('book_id',$id)->first();
-        if (!empty($x)) {
-            $data = DB::table('makes')
-            ->join('books','makes.book_id','=','books.id')
-            ->join('users','makes.user_id','=','users.id')
-            ->select(
-                'books.name as book_name',
-                'books.comment as book_comment',
-                'link',
-                'books.id as book_id',
-                'title',
-                'makes.comment as make_comment',
-                'score',
-                'img_pass',
-                'users.name as user_name',
-                'makes.created_at as time'
-                )
-            ->where('book_id', $id)
-            ->get();
-            // return view('detail', compact('data'));
+        $this->service = $service;
+    }
+    public function showDetail(string $id)
+    {
+        // $x = Make::where('book_id',$id)->first();
+        $result = $this->service->LookForBookId(intval($id));
+        if (!empty($result)) {
+            $isdata = $this->service->showMakeList(intval($id));
             return view('detail', [
-                'data' => $data,
+                'data' => $isdata,
             ]);
         } else {
-            $data = Book::find($id);
-            return view('detail2', compact('data'));
+            $isdata = $this->service->emptyMakeList(intval($id));
+            return view('detail2', compact('isdata'));
         }
-
-        // } catch (Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-
-        // }
     }
+
+
 }

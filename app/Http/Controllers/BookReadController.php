@@ -13,9 +13,11 @@ use App\Services\BookReadService;
 
 class BookReadController extends Controller
 {
-    public function __construct(BookReadService $bookread)
+    protected $service;
+
+    public function __construct(BookReadService $service)
     {
-        $this->bookread = $bookread;
+        $this->service = $service;
     }
     public function read()
     {
@@ -30,7 +32,7 @@ class BookReadController extends Controller
         //     'users.name as user_name'
         //     )
         // ->get();
-        $result = $this->bookread->retrieveBookRead();
+        $result = $this->service->retrieveBookRead();
         return view('home', [
             'books' => $result,
         ]);
