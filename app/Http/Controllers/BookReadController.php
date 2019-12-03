@@ -9,27 +9,30 @@ use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\BookPost;
+use App\Services\BookReadService;
 
 class BookReadController extends Controller
 {
+    public function __construct(BookReadService $bookread)
+    {
+        $this->bookread = $bookread;
+    }
     public function read(Request $request)
     {
-        $books = DB::table('books')
-        ->join('users','users.id','=','books.user_id')
-        ->select(
-            'books.id as book_id',
-            'books.name as book_name',
-            'comment',
-            'link',
-            'books.created_at as time',
-            'users.name as user_name'
-            )
-        ->get();
-        // $user = DB::table('books')
-        // ->join('booksusers','users.id','=','books.user_id')
+        // $books = DB::table('books')
+        // ->join('users','users.id','=','books.user_id')
+        // ->select(
+        //     'books.id as book_id',
+        //     'books.name as book_name',
+        //     'comment',
+        //     'link',
+        //     'books.created_at as time',
+        //     'users.name as user_name'
+        //     )
         // ->get();
+        $result = $this->bookread->retrieveBookRead();
         return view('home', [
-            'books' => $books,
+            'books' => $result,
         ]);
     }
 }
