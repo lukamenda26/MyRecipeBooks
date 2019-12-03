@@ -7,7 +7,6 @@ class BookReadService
 {
     public function retrieveBookRead()
     {
-        $books = Book::all();
-        return $books;
+        return Book::all();
     }
 }

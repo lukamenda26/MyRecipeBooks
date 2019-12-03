@@ -8,19 +8,16 @@ class BookDetailService
 {
     public function LookForBookId(int $identifier)
     {
-        $x = Make::where('book_id',$identifier)->first();
-        return $x;
+        return Make::where('book_id',$identifier)->first();
     }
 
     public function showMakeList(int $identifier)
     {
-        $data = Make::whereBook_id($identifier)->get();
-        return $data;
+        return Make::whereBook_id($identifier)->get();
     }
 
     public function emptyMakeList(int $identifier)
     {
-        $data = Book::find($identifier);
-        return $data;
+        return Book::find($identifier);
     }
 }
