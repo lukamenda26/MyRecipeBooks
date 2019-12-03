@@ -17,7 +17,7 @@ class BookReadController extends Controller
     {
         $this->bookread = $bookread;
     }
-    public function read(Request $request)
+    public function read()
     {
         // $books = DB::table('books')
         // ->join('users','users.id','=','books.user_id')
