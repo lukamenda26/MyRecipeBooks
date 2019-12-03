@@ -21,14 +21,14 @@
             <div class="row o-3column">
                 @foreach ($books as $book)
                     <dl class="test02 col-md-4">
-                    <dt>{{ $book->book_name }}</dt>
+                    <dt>{{ $book->name }}</dt>
                         <dd>{{ $book->comment }}</dd>
                     @if (!empty($book->link))
                         <dd><a href="{{ $book->link }}" target="_blank">外部URLリンク</a></dd>
                     @endif
                         <dd>投稿日時：　{{ $book->created_at }}</dd>
                         <dd>投稿者：　{{ $book->user->name }}</dd>　
-                        <a href="/detail/{{ $book->book_id }}" class="btn btn-warning">
+                        <a href="/detail/{{ $book->id }}" class="btn btn-warning">
                             「作ってみた！」を見る
                         </a>
                     </dl>

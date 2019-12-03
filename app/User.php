@@ -26,17 +26,5 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    // // 任意のテーブルを紐付ける
-    // protected $table = "books";
-
-    // // primaryKeyの変更
-    // protected $primaryKey = "user_id";
-
-    // //hasMany設定
-    // public function books()
-    // {
-    //     return $this->hasMany('App\Book');
-    // }
     
 }

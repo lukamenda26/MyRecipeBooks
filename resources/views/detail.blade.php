@@ -6,13 +6,13 @@
 
 @section('content')
 
-<h1 class="booktitle">{{ $data[0]->book_name }}</h1>
+<h1 class="booktitle">{{ $data[0]->book->name }}</h1>
 <div class="box26">
     <span class="box-title">コメント</span>
-    <p>{{ $data[0]->book_comment }}　<a href="{{ $data[0]->link }}">外部URLリンク</a></p>
+    <p>{{ $data[0]->book->comment }}　<a href="{{ $data[0]->book->link }}" target="_blank">外部URLリンク</a></p>
 </div>
 <a href="/home" class="btn btn-default">TOPへ戻る</a>
-<a href="{{ route('detail.create', ['id' => $data[0]->book_id]) }}" class="btn btn-danger">作ってみた！を投稿する</a>
+<a href="{{ route('detail.create', ['id' => $data[0]->book->id]) }}" class="btn btn-danger">作ってみた！を投稿する</a>
 <br />
 <br />
 <div class="container">
@@ -38,8 +38,8 @@
                 @endif
             </dd>
             <dd>{{ $podata->make_comment }}</dd>
-            <dd>投稿者：{{ $podata->user_name }}</dd>
-            <dd>投稿日時：{{ $podata->time }}</dd>
+            <dd>投稿者：{{ $podata->user->name }}</dd>
+            <dd>投稿日時：{{ $podata->created_at }}</dd>
         </dl>
         @endforeach
     </div>
