@@ -6,9 +6,7 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>料理本おすすめサイト Myレシピブック - @yield('title')</title>
-        <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}"><!-- Bootstrap本体 -->
         <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     </head>
     <body>
     <div class="container">
@@ -24,9 +22,6 @@
         </p>
             @yield('content')
         </div>
-    <div id="app">
-        <example-component></example-component>
-    </div>
 
     <script src="{{ mix('js/app.js') }}"></script> 
     </body>

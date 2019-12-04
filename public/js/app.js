@@ -1154,10 +1154,16 @@ window.Vue = __webpack_require__(35);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', __webpack_require__(39));
+// Vue.component('example-component', __webpack_require__(39));
 
-var app = new Vue({
-  el: '#app'
+// var app = new Vue({
+//   el: '#app'
+// });
+
+Vue.component('index', __webpack_require__(39));
+
+var vue = new Vue({
+  el: '#vue'
 });
 
 /***/ }),
