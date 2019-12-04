@@ -23,7 +23,7 @@ Vue.use(VueRouter)
 const router = new VueRouter({
     mode: 'history',
     routes: [
-        { path: '/detail/{id}/create', component: require('./components/index.vue') }
+        { path: '/detail/:id/create', component: require('./components/index.vue') }
     ]
 })
 
