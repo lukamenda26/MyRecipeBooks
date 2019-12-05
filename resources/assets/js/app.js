@@ -17,6 +17,14 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-const app = new Vue({
+
+// jsがロードされるタイミングで#appのelementの存在チェックを行って、
+// html上になければ、処理を中断すれば良いです
+// 動作環境を作れなかったので、稼働確認はできていません。。。
+window.addEventListener('load', () => {
+  const vueElement = document.querySelector('#app');
+  if (vueElement == null) return;
+  const app = new Vue({
     el: '#app'
-});
+  });
+})
