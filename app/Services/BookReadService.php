@@ -7,6 +7,8 @@ class BookReadService
 {
     public function retrieveBookRead()
     {
-        return Book::all();
+        $data = Book::with('user')->get();
+        return $data;
+        // return Book::all();
     }
 }

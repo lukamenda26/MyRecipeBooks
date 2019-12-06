@@ -13,7 +13,7 @@ class BookDetailService
 
     public function showMakeList(int $identifier)
     {
-        return Make::whereBook_id($identifier)->get();
+        return Make::whereBook_id($identifier)->with('user', 'book')->get();
     }
 
     public function emptyMakeList(int $identifier)
