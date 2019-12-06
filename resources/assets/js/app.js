@@ -20,17 +20,7 @@ Vue.use(VueRouter)
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-const router = new VueRouter({
-    mode: 'history',
-    routes: [
-        { path: '/detail/:id/create', component: require('./components/index.vue') }
-    ]
-})
 
 // const app = new Vue({
 //     el: '#app'
 // });
-
-const vue = new Vue({
-    router
-}).$mount('#vue')
