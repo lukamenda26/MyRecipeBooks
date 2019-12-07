@@ -1162,38 +1162,69 @@ window.Vue = __webpack_require__(35);
 
 Vue.component('index', __webpack_require__(39));
 
+// HTMLをloadしたタイミングで発火させるeventを設定
+// loadイベントを追加ver.
+
+window.addEventListener('load', () => {
+  const vueElement = document.querySelector('#vue');
+  if (vueElement == null) return;
+  const vue = new Vue({
+    el: '#vue',
+    data: {
+        score: 5
+    },
+    computed: {
+        showStar: function() {
+            if (this.score == 5) {
+                return "★★★★★"
+            } else if (this.score == 4) {
+                return "★★★★"
+            } else if (this.score == 3) {
+                return "★★★"
+            } else if (this.score == 2) {
+                return "★★"
+            } else {
+                return "★"
+            }
+        }
+    }
+  })
+})
+
+// HTMLをloadしたタイミングで発火させるeventを設定
+// loadイベントを上書きするver.
 // jsがロードされるタイミングで
-window.onload = judgeVueExisthing();
+// window.onload = judgeVueExisthing();
 
 // #vueのelementの存在をチェックする
-function judgeVueExisthing() {
-    const judge = document.getElementById("vue");
-    if (judge == null) {
-        return;
-    } else {
-        const vue = new Vue({
-            el: '#vue',
-            data: {
-                score: 5
-            },
-            computed: {
-                showStar: function() {
-                    if (this.score == 5) {
-                        return "★★★★★"
-                    } else if (this.score == 4) {
-                        return "★★★★"
-                    } else if (this.score == 3) {
-                        return "★★★"
-                    } else if (this.score == 2) {
-                        return "★★"
-                    } else {
-                        return "★"
-                    }
-                }
-            }
-        })
-    }
-}
+// function judgeVueExisthing() {
+//     const judge = document.getElementById("vue");
+//     if (judge == null) {
+//         return;
+//     } else {
+//         const vue = new Vue({
+//             el: '#vue',
+//             data: {
+//                 score: 5
+//             },
+//             computed: {
+//                 showStar: function() {
+//                     if (this.score == 5) {
+//                         return "★★★★★"
+//                     } else if (this.score == 4) {
+//                         return "★★★★"
+//                     } else if (this.score == 3) {
+//                         return "★★★"
+//                     } else if (this.score == 2) {
+//                         return "★★"
+//                     } else {
+//                         return "★"
+//                     }
+//                 }
+//             }
+//         })
+//     }
+// }
 
 /***/ }),
 /* 13 */
