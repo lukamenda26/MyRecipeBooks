@@ -1191,40 +1191,6 @@ window.addEventListener('load', () => {
   })
 })
 
-// HTMLをloadしたタイミングで発火させるeventを設定
-// loadイベントを上書きするver.
-// jsがロードされるタイミングで
-// window.onload = judgeVueExisthing();
-
-// #vueのelementの存在をチェックする
-// function judgeVueExisthing() {
-//     const judge = document.getElementById("vue");
-//     if (judge == null) {
-//         return;
-//     } else {
-//         const vue = new Vue({
-//             el: '#vue',
-//             data: {
-//                 score: 5
-//             },
-//             computed: {
-//                 showStar: function() {
-//                     if (this.score == 5) {
-//                         return "★★★★★"
-//                     } else if (this.score == 4) {
-//                         return "★★★★"
-//                     } else if (this.score == 3) {
-//                         return "★★★"
-//                     } else if (this.score == 2) {
-//                         return "★★"
-//                     } else {
-//                         return "★"
-//                     }
-//                 }
-//             }
-//         })
-//     }
-// }
 
 /***/ }),
 /* 13 */
